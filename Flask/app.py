@@ -1,7 +1,7 @@
 """
 Examen Unidad III 
-Autor: [Tu Nombre]
-Fecha: [Fecha Actual]
+Autor: [Leandro Demian Gaona Obispo]
+Fecha: [20-10-2025]
 
 Descripción:
 Objetivo del examen
