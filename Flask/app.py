@@ -56,8 +56,7 @@ la formula es la siguente:
 """
 
 
-from flask import Flask, jsonify, request, render_template_string
-
+from flask import Flask, jsonify, render_template_string, request, redirect, url_for
 app = Flask(__name__)
 
 dispositivos = {
@@ -117,6 +116,13 @@ def mostrar_html():
     </html>
     """
     return render_template_string(html, dispositivos=dispositivos)
+
+def formula(ip, nombre):
+    ultimo_octeto = int(ip.split('.')[-1])
+    longitud_nombre = len(nombre)
+    nombre_modificado = nombre.replace(" ", "_")
+    resultado = ultimo_octeto * 3 + longitud_nombre
+    return f"{resultado}:{nombre_modificado}"
 
 
 @app.route('/dispositivos', methods=['POST'])
